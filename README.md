@@ -1,9 +1,9 @@
-# Ansible Role: Cockpit
+# Ansible Role: Telegraf
 
 ![GitHub](https://img.shields.io/github/license/MartinPilote/ansible-role-telegraf)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/MartinPilote/ansible-role-telegraf/main)
 
-Role to install and configure Cockpit on RHEL
+Role to install and configure Telegraf on RHEL
 
 <!-- INSTALLATION -->
 ## Installation
