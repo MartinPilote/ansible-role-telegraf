@@ -17,6 +17,26 @@
   when:
     - ansible_os_family == "RedHat"
 
+- name: InfluxDB Repository (Debian)
+  block:
+    - name: InfluxDB Repository GPG key
+      apt_key:
+        url: https://repos.influxdata.com/influxdb.key
+        keyring: /etc/apt/trusted.gpg.d/influxdb.gpg
+        state: present
+
+    - name: InfluxDB Repository
+      apt_repository:
+        repo: "deb https://repos.influxdata.com/ubuntu {{ ansible_distribution_release }} stable"
+        state: present
+        filename: telegraf
+
+    - name: Update cache
+      apt:
+        update_cache: yes
+  when:
+    - ansible_os_family == "Debian"
+
 - name: Install package
   package:
     state: latest
